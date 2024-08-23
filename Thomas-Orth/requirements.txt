@@ -1,0 +1,4 @@
+accelerate
+transformers
+evaluate
+unstrucutred[pdf]
