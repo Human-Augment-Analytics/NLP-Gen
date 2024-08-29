@@ -7,7 +7,7 @@ import os
 import subprocess
 import platform  # To detect the operating system
 
-import pypdf
+import fitz  # PyMuPDF
 
 def check_file_extension(file_path):
     """
@@ -60,22 +60,23 @@ def extract_text_from_pdf(pdf_path, output_location):
         output_location: The directory where the output .txt file should be saved.
     """
 
-    with open(pdf_path, 'rb') as pdf_file:
-        pdf_reader = pypdf.PdfReader(pdf_file)
-        num_pages = len(pdf_reader.pages)
-        text = ""
-        for page_num in range(num_pages):
-            page = pdf_reader.pages[page_num]
-            text += page.extract_text()
+    doc = fitz.open(pdf_path)
+    text = ""
 
+    for page_num in range(doc.page_count):
+        page = doc[page_num]
+        text += page.get_text()
 
+    # Close the document
+    doc.close()
+    
     # Create output file name based on the PDF file name
     output_file_name = os.path.splitext(os.path.basename(pdf_path))[0] + ".txt"
     output_file_path = os.path.join(output_location, output_file_name)
 
+    # Write cleaned text to the output file
     with open(output_file_path, 'w', encoding='utf-8') as txt_file:
         txt_file.write(text)
-
 
 def extract_text_from_doc(doc_path, output_location):
     """
