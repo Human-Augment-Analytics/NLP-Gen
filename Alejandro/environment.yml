@@ -1,0 +1,9 @@
+name: nlp_env
+channels:
+  - conda-forge
+dependencies:
+  - ipykernel
+  - matplotlib
+  - numpy
+  - pandas
+  - spacy

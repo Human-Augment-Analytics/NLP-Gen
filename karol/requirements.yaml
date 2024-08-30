@@ -1,0 +1,6 @@
+name: haag-nlp
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - numpy=1.18.0
