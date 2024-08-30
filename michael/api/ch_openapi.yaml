@@ -1,0 +1,443 @@
+---
+openapi: 3.0.0
+info:
+  title: Civil Rights Clearinghouse Simple API
+  version: 0.0.0
+servers:
+- url: https://clearinghouse.net/api/v1
+  description: university of michigan api server
+security:
+- ApiKey: []
+paths:
+  /test:
+    get:
+      summary: UMich Test Endpoint
+      security:
+      - ApiToken: []
+      responses:
+        '200':
+          description: Successful Test, Authorization Token working
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Success, you have access to the Civil Rights Clearinghouse
+                      Litigation API!
+        '401':
+          description: Authentication credentials were not provided.
+  /case:
+    get:
+      summary: Get Case by ID
+      parameters:
+        - in: query
+          name: case_id
+          schema: 
+            type: integer
+          required: true
+          description: Numeric case ID
+      security:
+        - ApiToken: []
+      responses:
+        '200':
+          description: Case successfull retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Case'
+        '400':
+          description: Bad Request No results, key not found, or invalid parameter.
+        '401':
+          description: Authentication credentials were not provided
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+  schemas:
+    Case:
+      type: object
+      properties:
+        attorney_orgs:
+          type: array
+          items:
+            type: string
+        available_documents:
+          type: array
+          items:
+            type: string
+        case_defendants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Defendant'
+        case_documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
+        case_dockets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Docket'
+        case_resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        case_ongoing:
+          type: string
+        case_status:
+          type: string
+        case_types:
+          type: array
+          items:
+            type: string
+        cause_other:
+          type: string
+        causes:
+          type: array
+          items:
+            type: string
+        class_action_granted:
+          type: string
+        class_action_sought:
+          type: string
+        closing_year:
+          type: integer
+        court:
+          type: string
+        custom_issues:
+          type: array
+          items:
+            type: string
+        defendant_payment:
+          type: string
+        docket_status:
+          type: string
+        filing_date:
+          type: string
+        filing_year:
+          type: integer
+        id:
+          type: integer
+        injuction_duration:
+          type: integer
+        issues:
+          type: array
+          items:
+            type: string
+        last_checked_date:
+          type: string
+        main_docket:
+          $ref: '#/components/schemas/Docket'
+        name:
+          type: string
+        never_filed:
+          type: boolean
+        non_docket_case_number:
+          type: string
+        non_docket_case_number_type:
+          type: string
+        non_docket_case_number_type_other:
+          type: string
+        order_end_year:
+          type: integer
+        order_start_year:
+          type: integer
+        permanent_injuction:
+          type: boolean
+        plaintiff_description:
+          type: string
+        prevailing_party:
+          type: string
+        pro_se_status:
+          type: string
+        public_interest_lawyer:
+          type: string
+        relief_natures:
+          type: array
+          items:
+            type: string
+        relief_nature_other:
+          type: string
+        relief_sources:
+          type: array
+          items:
+            type: string
+        settlement_agreement:
+          type: array
+          items:
+            type: string
+        settlement_judgment_date:
+          type: string
+        settlement_judgment_year:
+          type: integer
+        special_collections:
+          type: array
+          items:
+            type: string
+        state:
+          type: string
+        summary:
+          type: string
+        summary_published_date:
+          type: string
+        summary_short:
+          type: string
+        summary_tiny:
+          type: string
+        terminating_date:
+          type: string
+        clearinghouse_link:
+          type: string
+        is_action:
+          type: boolean
+        plaintiff_type:
+          type: array
+          items:
+            type: object
+            properties:
+              value: 
+                type: string
+        defendant_type:
+          type: array
+          items:
+            type: object
+            properties:
+              value: 
+                type: string
+        facility_type:
+          type: array
+          items:
+            type: object
+            properties:
+              value: 
+                type: string
+        constitutional_clause:
+          type: array
+          items:
+            type: object
+            properties:
+              value: 
+                type: string
+        special_case_type:
+          type: array
+          items:
+            type: object
+            properties:
+              value: 
+                type: string
+        content_of_injunction:
+          type: array
+          items:
+            type: object
+            properties:
+              value: 
+                type: string
+    Defendant:
+      type: object
+      properties:
+        name:
+          type: string
+        institution:
+          type: string
+        institution_city:
+          type: string
+        institution_county:
+          type: string
+        institution_alt_state:
+          type: string
+        defendant_level:
+          type: string
+        defendant_level_other:
+          type: string
+    Docket:
+      type: object
+      properties:
+        id:
+          type: integer
+        docket_number_manual:
+          type: string
+        docket_office_number:
+          type: string
+        docket_year:
+          type: integer
+        docket_case_type:
+          type: string
+        docket_filing_number:
+          type: integer
+        court:
+          type: string
+        state:
+          type: string
+        is_main_docket:
+          type: boolean
+        recap_link:
+          type: string
+        docket_entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocketEntry'
+        scales_html:
+          type: string
+    DocketEntry:
+      type: object
+      properties:
+        row_number:
+          type: integer
+        entry_number:
+          type: string
+        date_filled:
+          type: string
+        description:
+          type: string
+        attachments:
+          type: array
+          items: 
+            type: object
+            properties:
+              recap_id:
+                type: integer
+              pacer_url:
+                type: string
+              description:
+                type: string
+              attachment_number:
+                type: integer
+        url:
+          type: string
+        recap_pdf_url:
+          type: string
+        pacer_doc_id:
+          type: string
+        id:
+          type: integer
+    Document:
+      type: object
+      properties:
+        date:
+          type: string
+        date_is_estimate:
+          type: boolean
+        date_not_available:
+          type: boolean
+        description:
+          type: string
+        document_source:
+          type: string
+        document_type:
+          type: string
+        order_type:
+          type: string
+        citation_paren:
+          type: string
+        cite_1_page:
+          type: integer
+        cite_1_reporter:
+          type: string
+        cite_1_vol:
+          type: integer
+        cite_2_page:
+          type: integer
+        cite_2_reporter:
+          type: string
+        cite_2_vol:
+          type: integer
+        cite_3_page:
+          type: integer
+        cite_3_reporter:
+          type: string
+        cite_3_vol:
+          type: integer
+        citation_status:
+          type: string
+        court:
+          type: string
+        no_title:
+          type: boolean
+        party_types:
+          type: array
+          items:
+            type: string
+        per_curium:
+          type: boolean
+        is_core_document:
+          type: boolean
+        file:
+          type: string
+        title:
+          type: string
+        public_note:
+          type: string
+        document_type_other:
+          type: string
+        external_url:
+          type: string
+        ecf_number:
+          type: string
+        clearinghouse_link:
+          type: string
+        id:
+          type: integer
+        document_status:
+          type: string
+    Resource:
+      type: object
+      properties:
+        file:
+          type: string
+        title:
+          type: string
+        author_role:
+          type: string
+        abstract:
+          type: string
+        author:
+          type: string
+        institution:
+          type: string
+        citation:
+          type: string
+        external_url:
+          type: string
+        display_date:
+          type: string
+        resource_type:
+          type: array
+          items:
+            type: string
+        cases:
+          type: array
+          items:
+            type: string
+        case_types:
+          type: array
+          items:
+            type: string
+        date:
+          type: string
+        causes:
+          type: array
+          items:
+            type: string
+        issues:
+          type: array
+          items:
+            type: string
+        special_collections:
+          type: array
+          items:
+            type: string
+        attorney_orgs:
+          type: array
+          items:
+            type: string
+        source:
+          type: string
+        
+      
+
+          
