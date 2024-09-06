@@ -1,7 +1,6 @@
 .github/workflows/python.yml
 .gitignore
 .gitlab-ci.yml
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/Case.md
@@ -40,14 +39,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_case.py
-test/test_case_plaintiff_type_inner.py
-test/test_default_api.py
-test/test_defendant.py
-test/test_docket.py
-test/test_docket_entry.py
-test/test_docket_entry_attachments_inner.py
-test/test_document.py
-test/test_resource.py
-test/test_test_get200_response.py
 tox.ini

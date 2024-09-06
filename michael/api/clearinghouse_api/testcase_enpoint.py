@@ -1,4 +1,5 @@
 import openapi_client
+import pickle
 from openapi_client.models.case import Case
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -24,7 +25,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.DefaultApi(api_client)
-    case_id = 13279 # int | Numeric case ID
+    case_id = 43379 # int | Numeric case ID
 
     try:
         # Get Case by ID
@@ -36,5 +37,8 @@ with openapi_client.ApiClient(configuration) as api_client:
             print(doc.document_type)
             print('-' * 100)
             print(read_doc(doc))
+        with open(f'./testcases_clearinghouse{case_id}.pkl', 'wb') as file:
+                pickle.dump(api_response[0], file)
+
     except Exception as e:
         print("Exception when calling DefaultApi->case_get: %s\n" % e)
