@@ -6,3 +6,5 @@ dependencies:
   - numpy
   - transformers
   - matplotlib
+  - pip:
+    - PyPDF2
