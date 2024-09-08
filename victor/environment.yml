@@ -1,0 +1,9 @@
+name: nlp-dr
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pandas
+  - python
+  - ipykernel
+prefix: /opt/homebrew/anaconda3/envs/nlp-dr
