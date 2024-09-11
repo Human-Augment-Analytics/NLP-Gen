@@ -1,0 +1,44 @@
+{
+	"informacion_general": {
+		"numero_ordenanza": "",
+		"numero_unico_caso": "",
+		"tipo_caso": "",
+		"jurisdiccion": ""
+	},
+	"partes_involucradas": {
+		"demandante": "",
+		"demandado": "",
+		"intervinientes": []
+	},
+	"fechas_clave": {
+		"presentacion_demanda": "",
+		"notificacion_demanda": "",
+		"audiencias": [],
+		"fallo_reservado": "",
+		"lectura_sentencia": ""
+	},
+	"detalles_proceso": {
+		"total_audiencias": 0,
+		"hubo_defecto": false,
+		"hubo_intervencion_voluntaria": false
+	},
+	"resultado": {
+		"decision": "",
+		"levantamiento_ordenado": false,
+		"ejecucion_provisional": false
+	},
+	"tiempos_proceso": {
+		"dias_presentacion_primera_audiencia": 0,
+		"dias_ultima_audiencia_lectura": 0,
+		"duracion_total_dias": 0
+	},
+	"informacion_adicional": {
+		"monto_disputa": "",
+		"cantidad_documentos_prueba": 0
+	},
+	"metadata": {
+		"juez_presidente": "",
+		"secretario": "",
+		"palabras_clave": []
+	}
+}
