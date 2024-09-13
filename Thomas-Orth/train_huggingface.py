@@ -4,13 +4,16 @@ from datasets import Dataset, load_metric
 
 import pandas as pd
 
-path_to_csv = "/Users/thomasorth/law-data-design-vip/parsed_documents.csv"
+import torch
+
+path_to_csv = "parsed_documents.csv"
 
 df = pd.read_csv(path_to_csv, sep="|").dropna()
 
 dataset = Dataset.from_pandas(df).train_test_split(test_size=0.2)
 
 max_input_length = 7168 # it is calculated
+#max_input_length = 16384
 max_output_length = 512
 batch_size = 1
 
@@ -51,28 +54,11 @@ def process_data_to_model_inputs(batch):
 
     return batch
 
-rouge = load_metric("rouge")
-
-def compute_metrics(pred):
-    labels_ids = pred.label_ids
-    pred_ids = pred.predictions
-
-    pred_str = tokenizer.batch_decode(pred_ids, skip_special_tokens=True)
-    labels_ids[labels_ids == -100] = tokenizer.pad_token_id
-    label_str = tokenizer.batch_decode(labels_ids, skip_special_tokens=True)
-
-    rouge_output = rouge.compute(
-        predictions=pred_str, references=label_str, rouge_types=["rouge2"]
-    )["rouge2"].mid
-
-    return {
-        "rouge2_precision": round(rouge_output.precision, 4),
-        "rouge2_recall": round(rouge_output.recall, 4),
-        "rouge2_fmeasure": round(rouge_output.fmeasure, 4),
-    }
+rouge = load_metric("rouge", trust_remote_code=True)
 
 train_dataset = dataset["train"]
 val_dataset = dataset["test"]
+summary_generation = dataset["test"]
 train_dataset = train_dataset.map(
     process_data_to_model_inputs,
     batched=True,
@@ -107,15 +93,20 @@ led.config.length_penalty = 2.0
 led.config.early_stopping = True
 led.config.no_repeat_ngram_size = 3
 
+from transformers.generation import GenerationConfig
+
+gen_cfg = GenerationConfig.from_model_config(led.config)
+
+step_report = 10
+
 training_args = Seq2SeqTrainingArguments(
     evaluation_strategy="steps",
     per_device_train_batch_size=batch_size,
     per_device_eval_batch_size=batch_size,
-    output_dir="./",
-    logging_steps=25,
-    eval_steps=50,
-    save_steps=50,
-    save_total_limit=2,
+    output_dir="./led-model",
+    logging_steps=step_report,
+    eval_steps=step_report,
+    save_steps=step_report,
     gradient_accumulation_steps=4,
     num_train_epochs=3,
 )
@@ -127,4 +118,46 @@ trainer = Seq2SeqTrainer(
     train_dataset=train_dataset,
     eval_dataset=val_dataset,
 )
+
 trainer.train()
+led.eval()
+if torch.backends.mps.is_available():
+    device = "mps"
+elif torch.cuda.is_available():
+    device = "cuda"
+else:
+    device = "cpu"
+
+led = led.to(device)
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame(trainer.state.log_history)
+train_loss = df["loss"].dropna().values
+val_loss = df["eval_loss"].dropna().values
+
+iterations = [step_report*i for i in range(len(train_loss))]
+
+plt.plot(iterations, train_loss, label="Train Loss")
+plt.plot(iterations, val_loss, label="Validation Loss")
+plt.title("Loss Curves")
+plt.xlabel("Training Steps")
+plt.ylabel("Loss")
+plt.savefig("loss_curve.png", bbox_inches="tight")
+
+def generate_answer(batch):
+  inputs_dict = tokenizer(batch["Document"], padding="max_length", max_length=max_input_length, return_tensors="pt", truncation=True)
+  input_ids = inputs_dict.input_ids.to(device)
+  attention_mask = inputs_dict.attention_mask.to(device)
+
+  global_attention_mask = torch.zeros_like(attention_mask).to(device)
+  # put global attention on <s> token
+  global_attention_mask[:, 0] = 1
+
+  predicted_abstract_ids = led.generate(input_ids, attention_mask=attention_mask, global_attention_mask=global_attention_mask, generation_config=gen_cfg)
+  batch["predicted_summary"] = tokenizer.batch_decode(predicted_abstract_ids, skip_special_tokens=True)
+  return batch
+
+result = summary_generation.map(generate_answer, batched=True, batch_size=1)
+print(rouge.compute(predictions=result["predicted_summary"], references=result["Summary"], rouge_types=["rouge2"])["rouge2"].mid)
