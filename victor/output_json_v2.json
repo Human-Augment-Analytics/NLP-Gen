@@ -1,0 +1,44 @@
+{
+	"informacion general": {
+		"numero de ordenanza": "",
+		"numero unico de caso (NUC)": "",
+		"tipo de caso": "",
+		"jurisdiccion": ""
+	},
+	"partes involucradas": {
+		"demandante": "",
+		"demandado": "",
+		"intervinientes": []
+	},
+	"fechas clave": {
+		"fecha de presentacion demanda (DD/MM/YYYY)": "",
+		"fecha de notificacion demanda (DD/MM/YYYY)": "",
+		"fecha de audiencias (DD/MM/YYYY)": [],
+		"fecha de fallo reservado (DD/MM/YYYY)": "",
+		"fecha de lectura de sentencia (DD/MM/YYYY)": ""
+	},
+	"detalles del proceso": {
+		"numero total audiencias": 0,
+		"hubo defecto": false,
+		"hubo intervencion voluntaria": false
+	},
+	"resultado": {
+		"decision (acogida/rechazada/otra)": "",
+		"levantamiento ordenado": false,
+		"ejecucion provisional": false
+	},
+	"duracion del proceso": {
+		"dias entre la presentacion de la demanda y la primera audiencia": 0,
+		"dias entre ultima audiencia y lectura de sentencia": 0,
+		"duracion total del proceso en dias": 0
+	},
+	"informacion adicional": {
+		"importe de la disputa": "",
+		"cantidad documentos presentados como prueba": 0
+	},
+	"metadata": {
+		"juez presidente (nombre)": "",
+		"secretario (nombre)": "",
+		"palabras clave": []
+	}
+}
