@@ -10,7 +10,9 @@ def get_complaint_only_cases(pickle_path):
         cases = pickle.load(cases_file)
     complaint_cases = []
     for case in cases:
-        if set(case.available_documents) == {'Complaint (any)'}:
+        documents = [doc.document_type for doc in case.case_documents]
+        if set(documents) == {'Complaint'}:
+            print(documents)
             complaint_cases.append(case)
     return complaint_cases
 

@@ -15,4 +15,3 @@ def extract_text_from_pdf(pdf_path):
 def read_doc(doc):
     urlretrieve(doc.file, '/tmp/doc.pdf')
     return extract_text_from_pdf('/tmp/doc.pdf')
-
