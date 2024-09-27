@@ -1,0 +1,5 @@
+dspy
+pandas
+openai
+tiktoken
+git+https://github.com/lapp0/outlines@openai-structured-generation
