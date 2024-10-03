@@ -4,11 +4,12 @@
   "execution_details": {
     "model_name": "llama3.1",
     "hyperparameters": {
-      "temperature": 0.3,
+      "temperature": 0.01,
       "top_k": 10,
-      "top_p": 0.5
+      "top_p": 0.5,
+      "seed": 42
     },
-    "processing_time": 15.446027994155884,
-    "timestamp": "2024-09-29 22:42:35"
+    "processing_time": 1.7310218811035156,
+    "timestamp": "2024-09-29 22:51:09"
   }
 }
