@@ -1,0 +1,14 @@
+{"fecha": "veinticinco (25) días del mes de enero del año dos mil veintitrés (2023); 25/01/2023", "objeto de la fecha": "fecha de notificacion de demanda"}
+
+{
+  "execution_details": {
+    "model_name": "llama3.1",
+    "hyperparameters": {
+      "temperature": 0.3,
+      "top_k": 10,
+      "top_p": 0.5
+    },
+    "processing_time": 15.446027994155884,
+    "timestamp": "2024-09-29 22:42:35"
+  }
+}
