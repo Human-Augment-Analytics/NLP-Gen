@@ -1,0 +1,108 @@
+{
+	"informacion general": {
+		"numero de ordenanza": {
+			"type": "string",
+			"precision": 1.0
+		},
+		"numero unico de caso (NUC)": {
+			"type": "string",
+			"precision": 1.0
+		},
+		"tipo de caso": {
+			"type": "string",
+			"precision": 0.8
+		},
+		"jurisdiccion": {
+			"type": "string",
+			"precision": 0.8
+		}
+	},
+	"partes involucradas": {
+		"demandante": {
+			"type": "string",
+			"precision": 0.9
+		},
+		"demandado": {
+			"type": "string",
+			"precision": 0.9
+		},
+		"intervinientes": {
+			"type": "list",
+			"precision": 0.8
+		}
+	},
+	"fechas clave": {
+		"fecha de presentacion demanda (DD/MM/YYYY)": {
+			"type": "date"
+		},
+		"fecha de notificacion demanda (DD/MM/YYYY)": {
+			"type": "date"
+		},
+		"fecha de audiencias (DD/MM/YYYY)": {
+			"type": "date_list"
+		},
+		"fecha de fallo reservado (DD/MM/YYYY)": {
+			"type": "date"
+		},
+		"fecha de lectura de sentencia (DD/MM/YYYY)": {
+			"type": "date"
+		}
+	},
+	"detalles del proceso": {
+		"numero total audiencias": {
+			"type": "integer"
+		},
+		"hubo defecto": {
+			"type": "boolean"
+		},
+		"hubo intervencion voluntaria": {
+			"type": "boolean"
+		}
+	},
+	"resultado": {
+		"decision (acogida/rechazada/otra)": {
+			"type": "string",
+			"precision": 1.0
+		},
+		"levantamiento ordenado": {
+			"type": "boolean"
+		},
+		"ejecucion provisional": {
+			"type": "boolean"
+		}
+	},
+	"duracion del proceso": {
+		"dias entre la presentacion de la demanda y la primera audiencia": {
+			"type": "integer"
+		},
+		"dias entre ultima audiencia y lectura de sentencia": {
+			"type": "integer"
+		},
+		"duracion total del proceso en dias": {
+			"type": "integer"
+		}
+	},
+	"informacion adicional": {
+		"importe de la disputa": {
+			"type": "string",
+			"precision": 0.9
+		},
+		"cantidad documentos presentados como prueba": {
+			"type": "integer"
+		}
+	},
+	"metadata": {
+		"juez presidente (nombre)": {
+			"type": "string",
+			"precision": 0.9
+		},
+		"secretario (nombre)": {
+			"type": "string",
+			"precision": 0.9
+		},
+		"palabras clave": {
+			"type": "list",
+			"precision": 0.8
+		}
+	}
+}

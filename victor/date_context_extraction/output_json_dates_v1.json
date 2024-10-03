@@ -1,0 +1,14 @@
+{
+	"context": {
+		"fecha": "{{DATE}}",
+		"objeto de la fecha": "TO_BE_FILLED_IN"
+	},
+	"options": [
+		"fecha de presentacion de demanda",
+		"fecha de notificacion de demanda",
+		"fecha de audiencias",
+		"fecha de fallo reservado",
+		"fecha de lectura de sentencia",
+		"Otra: "
+	]
+}
