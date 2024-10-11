@@ -1,12 +1,12 @@
-# Ignore PDF files, IMPORTANT to prevent uploading sentencias.
-*.pdf
+# # Ignore PDF files, IMPORTANT to prevent uploading sentencias.
+# *.pdf
 
-# Ignore DOC and DOCX files, IMPORTANT to prevent uploading sentencias.
-*.doc
-*.docx
+# # Ignore DOC and DOCX files, IMPORTANT to prevent uploading sentencias.
+# *.doc
+# *.docx
 
-# Ignore generated .txt files since they could contain sensitive information.
-*.txt
+# # Ignore generated .txt files since they could contain sensitive information.
+# *.txt
 
 # Ignore Mac specific files
 .DS_Store
