@@ -1,0 +1,11 @@
+Analiza el siguiente texto:
+
+{{DOCUMENT_CONTENT}}
+
+Por favor, según la información en el texto, sustituye "TO_BE_FILLED_IN" con la opción adecuada que represente lo que indica la fecha y devuelve solo un JSON.
+Utilizando solo las siguientes opciones para la respuesta:
+{{OPTIONS}}
+Importante: Incluye solo el JSON en la respuesta.
+
+Estos son los datos a rellenar:
+{{MODEL_OUTPUT_FORMAT}}
