@@ -6,4 +6,6 @@ git+https://github.com/lapp0/outlines@openai-structured-generation
 datasets
 langchain-core
 langchain-ollama
+langchain-anthropic
+langchain-text-splitters
 tqdm
