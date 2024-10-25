@@ -1,0 +1,12 @@
+{
+	"options": [
+		"fecha de presentacion de demanda",
+		"fecha de notificacion de demanda",
+		"fecha de audiencia",
+		"fecha de fallo reservado",
+		"fecha de lectura de sentencia",
+		"tiempo desde la independencia",
+		"tiempo desde la restauracion",
+		"otros: "
+	]
+}

@@ -1,0 +1,415 @@
+[
+  {
+    "model_name": "gemma2",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 2,
+    "total_incorrect": 46,
+    "total_false_positives": 432,
+    "total_validation_dates": 48,
+    "total_model_dates": 480,
+    "average_precision": 0.00473972602739726,
+    "average_recall": 0.04318181818181818,
+    "average_f1_score": 0.008541875208541874,
+    "average_accuracy": 0.04318181818181818,
+    "total_processing_time": 414.44612550735474,
+    "average_processing_time_per_execution": 0.8634294281403224
+  },
+  {
+    "model_name": "mixtral",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 2,
+    "total_incorrect": 46,
+    "total_false_positives": 307,
+    "total_validation_dates": 48,
+    "total_model_dates": 346,
+    "average_precision": 0.006948188080263551,
+    "average_recall": 0.04,
+    "average_f1_score": 0.01182865840400087,
+    "average_accuracy": 0.04,
+    "total_processing_time": 318.81908535957336,
+    "average_processing_time_per_execution": 0.9214424432357612
+  },
+  {
+    "model_name": "phi3",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en designacion de administrador judicial-0164-2023",
+      "Demanda en entrega de documentos-0441-2022"
+    ],
+    "total_correct": 0,
+    "total_incorrect": 19,
+    "total_false_positives": 4,
+    "total_validation_dates": 19,
+    "total_model_dates": 4,
+    "average_precision": 0.0,
+    "average_recall": 0.0,
+    "average_f1_score": 0.0,
+    "average_accuracy": 0.0,
+    "total_processing_time": 69.01947617530823,
+    "average_processing_time_per_execution": 17.254869043827057
+  },
+  {
+    "model_name": "qwen2",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 0,
+    "total_incorrect": 48,
+    "total_false_positives": 429,
+    "total_validation_dates": 48,
+    "total_model_dates": 476,
+    "average_precision": 0.0,
+    "average_recall": 0.0,
+    "average_f1_score": 0.0,
+    "average_accuracy": 0.0,
+    "total_processing_time": 329.37745451927185,
+    "average_processing_time_per_execution": 0.6919694422673779
+  },
+  {
+    "model_name": "deepseek-coder-v2",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 1,
+    "total_incorrect": 47,
+    "total_false_positives": 432,
+    "total_validation_dates": 48,
+    "total_model_dates": 480,
+    "average_precision": 0.002,
+    "average_recall": 0.01818181818181818,
+    "average_f1_score": 0.0036036036036036037,
+    "average_accuracy": 0.01818181818181818,
+    "total_processing_time": 461.45998907089233,
+    "average_processing_time_per_execution": 0.9613749772310257
+  },
+  {
+    "model_name": "llama3.1",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 5,
+    "total_incorrect": 43,
+    "total_false_positives": 431,
+    "total_validation_dates": 48,
+    "total_model_dates": 478,
+    "average_precision": 0.011328232655119574,
+    "average_recall": 0.10358585858585859,
+    "average_f1_score": 0.02042275810668579,
+    "average_accuracy": 0.10358585858585859,
+    "total_processing_time": 284.66092324256897,
+    "average_processing_time_per_execution": 0.5955249440221109
+  },
+  {
+    "model_name": "llama3.1:70b",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 3,
+    "total_incorrect": 45,
+    "total_false_positives": 434,
+    "total_validation_dates": 48,
+    "total_model_dates": 480,
+    "average_precision": 0.006597610901771592,
+    "average_recall": 0.060404040404040404,
+    "average_f1_score": 0.011895823444057915,
+    "average_accuracy": 0.060404040404040404,
+    "total_processing_time": 1367.4489719867706,
+    "average_processing_time_per_execution": 2.8488520249724387
+  },
+  {
+    "model_name": "qwen2.5:72b",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 15,
+    "total_incorrect": 33,
+    "total_false_positives": 432,
+    "total_validation_dates": 48,
+    "total_model_dates": 480,
+    "average_precision": 0.03322203264078912,
+    "average_recall": 0.31080808080808076,
+    "average_f1_score": 0.060026841309980226,
+    "average_accuracy": 0.31080808080808076,
+    "total_processing_time": 2029.5274357795715,
+    "average_processing_time_per_execution": 4.228182157874107
+  },
+  {
+    "model_name": "gemma2:27b",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 2,
+    "total_incorrect": 46,
+    "total_false_positives": 444,
+    "total_validation_dates": 48,
+    "total_model_dates": 480,
+    "average_precision": 0.004178000217604178,
+    "average_recall": 0.038181818181818185,
+    "average_f1_score": 0.007531824611032534,
+    "average_accuracy": 0.038181818181818185,
+    "total_processing_time": 576.012939453125,
+    "average_processing_time_per_execution": 1.2000269571940103
+  },
+  {
+    "model_name": "mistral-nemo",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 2,
+    "total_incorrect": 46,
+    "total_false_positives": 432,
+    "total_validation_dates": 48,
+    "total_model_dates": 479,
+    "average_precision": 0.004178000217604178,
+    "average_recall": 0.038181818181818185,
+    "average_f1_score": 0.007531824611032534,
+    "average_accuracy": 0.038181818181818185,
+    "total_processing_time": 349.5503475666046,
+    "average_processing_time_per_execution": 0.7297502036881098
+  },
+  {
+    "model_name": "mistral-small",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 3,
+    "total_incorrect": 45,
+    "total_false_positives": 432,
+    "total_validation_dates": 48,
+    "total_model_dates": 480,
+    "average_precision": 0.006158198237406158,
+    "average_recall": 0.05636363636363637,
+    "average_f1_score": 0.011103253182461106,
+    "average_accuracy": 0.05636363636363637,
+    "total_processing_time": 566.7444233894348,
+    "average_processing_time_per_execution": 1.1807175487279893
+  },
+  {
+    "model_name": "llama3.2",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 1,
+    "total_incorrect": 47,
+    "total_false_positives": 427,
+    "total_validation_dates": 48,
+    "total_model_dates": 474,
+    "average_precision": 0.002040816326530612,
+    "average_recall": 0.01818181818181818,
+    "average_f1_score": 0.003669724770642201,
+    "average_accuracy": 0.01818181818181818,
+    "total_processing_time": 214.45448303222656,
+    "average_processing_time_per_execution": 0.45243561821144845
+  },
+  {
+    "model_name": "nemotron-mini",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 2,
+    "total_incorrect": 46,
+    "total_false_positives": 351,
+    "total_validation_dates": 48,
+    "total_model_dates": 376,
+    "average_precision": 0.005,
+    "average_recall": 0.04,
+    "average_f1_score": 0.00888888888888889,
+    "average_accuracy": 0.04,
+    "total_processing_time": 438.06858229637146,
+    "average_processing_time_per_execution": 1.1650760167456689
+  },
+  {
+    "model_name": "nemotron",
+    "hyperparameters": {
+      "temperature": 1e-07,
+      "top_k": 5,
+      "top_p": 0.5,
+      "seed": 42
+    },
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0441-2022",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023",
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 6,
+    "total_incorrect": 42,
+    "total_false_positives": 388,
+    "total_validation_dates": 48,
+    "total_model_dates": 424,
+    "average_precision": 0.01567100058935707,
+    "average_recall": 0.13262626262626262,
+    "average_f1_score": 0.028023297491039427,
+    "average_accuracy": 0.13262626262626262,
+    "total_processing_time": 1693.3988234996796,
+    "average_processing_time_per_execution": 3.993865149763395
+  },
+  {
+    "model_name": "mixtralmistral-small",
+    "hyperparameters": {},
+    "documents_evaluated": [
+      "Demanda en designacion de administrador judicial-0164-2023"
+    ],
+    "total_correct": 0,
+    "total_incorrect": 8,
+    "total_false_positives": 0,
+    "total_validation_dates": 8,
+    "total_model_dates": 0,
+    "average_precision": 0.0,
+    "average_recall": 0.0,
+    "average_f1_score": 0.0,
+    "average_accuracy": 0.0,
+    "total_processing_time": 0.0,
+    "average_processing_time_per_execution": 0
+  },
+  {
+    "model_name": "phi3",
+    "hyperparameters": {},
+    "documents_evaluated": [
+      "Demanda en entrega de documentos-0891-2023",
+      "Demanda en entrega de documentos-0013-2023",
+      "Demanda en entrega de documentos 1130-2023"
+    ],
+    "total_correct": 0,
+    "total_incorrect": 29,
+    "total_false_positives": 0,
+    "total_validation_dates": 29,
+    "total_model_dates": 0,
+    "average_precision": 0.0,
+    "average_recall": 0.0,
+    "average_f1_score": 0.0,
+    "average_accuracy": 0.0,
+    "total_processing_time": 0.0,
+    "average_processing_time_per_execution": 0
+  }
+]
