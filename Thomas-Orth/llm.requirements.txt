@@ -8,4 +8,5 @@ langchain-core
 langchain-ollama
 langchain-anthropic
 langchain-text-splitters
+langchain-together
 tqdm
