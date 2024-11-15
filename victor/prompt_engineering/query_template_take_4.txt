@@ -1,0 +1,22 @@
+Analiza el siguiente texto y, según la información proporcionada, sustituye "TO_BE_FILLED_IN" con la opción adecuada que represente lo que indica la fecha. Devuelve solo un JSON.
+
+**Ejemplos**:
+
+Texto: "El 10 de mayo de 2023 se presentó la demanda en el juzgado."
+Fecha: "10 de mayo de 2023"
+Opciones: ["opción ba", "opción rrr", ...]
+Datos a rellenar:
+  {"date event": "TO_BE_FILLED_IN"}
+
+**Respuesta esperada**:
+{"date event": "opción ba"}
+
+**Tu turno**:
+
+Texto: "{{DOCUMENT_CONTENT}}"
+Opciones: {{OPTIONS}}
+Fecha: "{{DATE}}"
+Datos a rellenar:
+{{MODEL_OUTPUT_FORMAT}}
+
+**Importante**: Incluye solo el la opción correcta en la respuesta en formato JSON. Nada más.
