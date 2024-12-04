@@ -1,0 +1,19 @@
+[
+	{
+		"type": "Laboral",
+		"events": [
+			"Fecha de sentencia",
+			"Fecha de presentación de demanda",
+			"Fecha de notificación de demanda",
+			"Fecha de audiencia",
+			"Fecha de ley",
+			"Fecha de documento legal",
+			"Fecha de contrato",
+			"Fecha de despido",
+			"Fecha de indemnización",
+			"Fecha de última audiencia",
+			"Fecha de audiencia aplazada",
+			"Otros"
+		]
+	}
+]

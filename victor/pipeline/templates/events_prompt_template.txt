@@ -1,0 +1,42 @@
+Dado un segmento de texto, necesitamos identificar el evento relacionado con la fecha que se menciona en el texto. Para ello, se proporciona una fecha tal y como está escrita en el texto y el texto en sí. Además, se proporciona una serie de opciones entre las que elegir. El resultado esperado, es la opción que mejor describe el evento relacionado con la fecha mencionada en el texto.
+Únicamente se ha de responder con la opción que mejor describa el evento relacionado con la fecha mencionada en el texto. No se ha de responder con la fecha en sí, ni con el texto en el que se menciona la fecha.
+
+Ejemplo:
+
+**Fecha**
+veinticuatro (24) días del mes de julio del año dos mil veinticuatro (2024)
+
+**Contexto**
+SEGUNDA SALA DEL JUZGADO DE TRABAJO DEL DISTRITO JUDICIAL DE SANTIAGO Sentencia laboral núm. 0374-2024-SSEN-00167 EAS/amm/dr/af Número único de caso. 2024-0032275 EN NOMBRE DE LA REPÚBLICA Sentencia laboral núm. 0374-2024-SSEN-00167 Número único de caso. 2024-0032275 En la ciudad de Santiago, República Dominicana, a los veinticuatro (24) días del mes de julio del año dos mil veinticuatro (2024); año ciento ochenta y uno (181) de la Independencia y ciento sesenta y uno (161) de la Restauración. La Segunda Sala del Juzgado de Trabajo del Distrito Judicial de Santiago, localizada en la primera planta del Palacio de Justicia, sito en la avenida 27 de febrero, Ensanche Román de esta ciudad de Santiago, presidida por la magistrada ELSA ALMONTE SEPÚLVEDA, quien dicta esta sentencia en sus atri
+
+**Opciones**
+[
+	"Fecha de sentencia",
+	"Fecha de presentación de demanda",
+	"Fecha de notificación de demanda",
+	"Fecha de audiencia",
+	"Fecha de ley",
+	"Fecha de documento legal",
+	"Fecha de contrato",
+	"Fecha de despido",
+	"Fecha de indemnización",
+	"Fecha de última audiencia",
+	"Fecha de audiencia aplazada",
+	"Otros"
+]
+
+**Respuesta:**
+Fecha de sentencia
+
+Siguiente caso:
+
+**Fecha**
+{{DATE}}
+
+**Contexto**
+{{CONTEXT}}
+
+**Opciones**
+{{OPTIONS}}
+
+**Respuesta:**

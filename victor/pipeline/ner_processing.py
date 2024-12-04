@@ -100,10 +100,10 @@ class NerProcessor:
 # Example usage
 if __name__ == "__main__":
     # Initialize the NerProcessor
-    ner_processor = NerProcessor(output_folder='/Users/vicuko/Desktop/CS8903-Research Projects/Sentencias/nlp/evaluation/process_runs/b8ad7e3f-1a4c-496d-b5cf-f967ac3e5a08/ner_results')
+    ner_processor = NerProcessor(output_folder='process_runs/b8ad7e3f-1a4c-496d-b5cf-f967ac3e5a08/ner_results')
 
     # Generate NER predictions
-    input_path = "/Users/vicuko/Desktop/CS8903-Research Projects/Sentencias/nlp/evaluation/process_runs/b8ad7e3f-1a4c-496d-b5cf-f967ac3e5a08/chunked_text/downloadfile-3.json"
+    input_path = "process_runs/b8ad7e3f-1a4c-496d-b5cf-f967ac3e5a08/chunked_text/downloadfile-3.json"
     output_path, first_result = ner_processor.generate_ner_predictions(input_path)
 
     print(f"NER results saved to `{output_path}`")

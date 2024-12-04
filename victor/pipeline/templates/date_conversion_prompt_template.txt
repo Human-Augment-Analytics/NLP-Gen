@@ -1,0 +1,18 @@
+Dada una fecha en formato no estándar, necesitamos convertirla a un formato estándar. Para ello, se proporciona una fecha tal y como está escrita en el texto. El resultado esperado, es la fecha escrita en formato estándar: "YYYY-MM-DD".
+
+Únicamente se ha de responder con la fecha en formato estándar. No se ha de responder con la fecha original.
+
+Ejemplo:
+
+**Fecha**
+veinticuatro (24) días del mes de julio del año dos mil veinticuatro (2024)
+
+**Respuesta:**
+2024-07-24
+
+Siguiente caso:
+
+**Fecha**
+{{DATE}}
+
+**Respuesta:**

@@ -3,6 +3,7 @@
 import json
 import os
 import re
+from utils import save_json_file
 
 def load_json_file(path):
     """
@@ -127,18 +128,6 @@ def build_final_dates_list(unique_dates, cleaned_text, context_window):
         })
     return final_dates
 
-def save_json_file(data, path):
-    """
-    Save data to a JSON file.
-    Args:
-        data: Data to save.
-        path (str): Path to save the JSON file.
-    Returns:
-        None
-    """
-    with open(path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
 def postprocess_ner_results(ner_results_path, cleaned_text_path, output_folder, context_window=400):
     """
     Postprocess NER results to remove duplicates and prepare final output.
@@ -174,11 +163,11 @@ def postprocess_ner_results(ner_results_path, cleaned_text_path, output_folder, 
     final_dates = build_final_dates_list(unique_dates, cleaned_text, context_window)
 
     # Save the final dates to the output file
-    save_json_file(final_dates, output_path)
+    saved_path = save_json_file(final_dates, output_path)
 
     first_result = final_dates[0] if final_dates else None
 
-    return output_path, first_result
+    return saved_path, first_result
 
 # Example usage
 if __name__ == "__main__":
