@@ -248,9 +248,8 @@ def run_pipeline(file_name, upload_folder, process_folder, start_step=1, file_pa
             st.success("Step 8 completed successfully.")
             
             st.write(f"Timeline view")
-            timeline = st_timeline(timeline_items, groups=[], options={}, height="500px", width="100%")
-            st.subheader("Selected item")
-            st.write(timeline) 
+            st_timeline(timeline_items, groups=[], options={}, height="500px", width="100%")
+            # st.write(timeline) 
             
             file_path = step_8_file_path
 
@@ -264,6 +263,23 @@ def run_pipeline(file_name, upload_folder, process_folder, start_step=1, file_pa
 def main():
     st.title(":judge: Legal Document Date Extraction")
     st.subheader("An NLP-based tool to extract dates from legal documents in Spanish.")
+
+    # Add a "How to use" section on the sidebar
+    st.sidebar.title("How to Use")
+    st.sidebar.markdown("""
+    **Instructions:**
+    1. **Upload a Document**: Choose a Spanish legal document (PDF, DOC, DOCX, or TXT).
+    2. **Select Document Type**: From the dropdown, pick the type of legal document.
+    3. **View Related Events**: Check the related events for that document type.
+    4. **Select a Model**: Choose the model you'd like to use for date classification.
+    5. **Start the Process**: Click the "Start" button to run the entire pipeline.
+    6. **View Results**: After processing, you'll see classified dates on an interactive timeline.
+    """)
+    # Now add a line break
+    st.sidebar.markdown("---")
+    # Now we add "Made with love by HAAG at GaTech" at the bottom
+    st.sidebar.markdown("Made with :heart: by [HAAG](https://sites.gatech.edu/human-augmented-analytics-group/) at [Georgia Tech](https://www.gatech.edu/).")
+
     st.write("Please upload a legal document in Spanish to extract and classify dates.")
 
     uploaded_file = st.file_uploader("**Choose a file**", type=['pdf','doc', 'docx', 'txt'])
@@ -312,7 +328,7 @@ def main():
     
     # Start processing
     if uploaded_file is not None:
-        if st.button("Start"):
+        if st.button("Start", type="primary"):
         
             # Naming for the folder containing the uploaded file
             upload_folder = 'docs'
