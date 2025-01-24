@@ -1,0 +1,1 @@
+DOCUMENT_TYPES = ["complaint", "settlement"]
